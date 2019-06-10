@@ -1,39 +1,47 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
       <router-link to="/connector">Connector</router-link>
     </div>
     <div id="container" ref="container">
       <div id="settings">
         <h1>Connectors</h1>
-        <span v-on:click="req('CSV')">CSV</span>
-        <span v-on:click="req('Excel')">Excel</span>
-        <span v-on:click="req('Postgres')">Postgres</span>
+        <span v-on:click="req('CSV')" @click="showModal">CSV</span>
+        <span v-on:click="req('Excel')" @click="showModal">Excel</span>
+        <span v-on:click="req('Postgres')" @click="showModal">Postgres</span>
       </div>
       <router-view/>
     </div>
+    <!-- TODO find out how to create modal relative to connector -->
+    <modal v-show="isModalVisible" @close="closeModal"/>
   </div>
 </template>
 
 <script>
-import Connector from '@/components/connector.vue'
-import Vue from 'vue'
+import modal from './components/Modal.vue'
 import axios from 'axios'
 
 export default {
+  name: 'app',
+  components: {
+    modal
+  },
+  data () {
+    return {
+      isModalVisible: false
+    }
+  },
   methods: {
-    req: function (path) {
+    showModal () {
+      this.isModalVisible = true
+    },
+    closeModal () {
+      this.isModalVisible = false
+    },
+    req (path) {
       axios
-        .get('http://localhost:5000/connector/' + path)
+        .get('http://localhost:5000/connector/' + path + '/add')
         .then(response => console.log(response))
-      // TODO Do this with py backend
-      Connector.props.connName = path
-      var ComponentClass = Vue.extend(Connector)
-      var instance = new ComponentClass({})
-      instance.$mount() // pass nothing
-      this.$refs.container.appendChild(instance.$el)
     }
   }
 }

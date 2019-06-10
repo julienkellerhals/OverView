@@ -8,7 +8,7 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 def hello():
     return 'Hi from root'
 
-@app.route('/connector/<conn>')
+@app.route('/connector/<conn>/add')
 def createCon(conn):
     return conn
 
