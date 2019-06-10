@@ -36,6 +36,9 @@ yarn run test:unit
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Start flask app
-$env:FLASK_APP = "core.py"
+```
+cd app
+$env:FLASK_APP = "appCore.py"
 $env:FLASK_ENV = "development"
 flask run
+```
