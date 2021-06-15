@@ -3,6 +3,11 @@ __pycache__/
 .DS_Store
 node_modules
 /dist
+driver/*
+/api/__pycache__/*
+/build/
+/dist/
+/config/config.json
 
 # local env files
 .env.local
