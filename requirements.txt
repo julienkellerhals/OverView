@@ -57,7 +57,7 @@ cytoolz==0.11.0
 dash @ file:///tmp/build/80754af9/dash_1611168717544/work
 dash-bootstrap-components==0.12.2
 dash-core-components==1.3.1
-dash-html-components==1.0.1
+dash-html-components==2.0.0
 dash-renderer==1.1.2
 dash-table==4.4.1
 dask @ file:///tmp/build/80754af9/dask-core_1622531687800/work
