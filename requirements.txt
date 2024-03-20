@@ -25,7 +25,7 @@ bcrypt @ file:///C:/ci/bcrypt_1597936263757/work
 beautifulsoup4 @ file:///home/linux1/recipes/ci/beautifulsoup4_1610988766420/work
 bitarray @ file:///C:/ci/bitarray_1620827742606/work
 bkcharts==0.2
-black==19.10b0
+black==24.3.0
 bleach @ file:///tmp/build/80754af9/bleach_1612211392645/work
 bokeh @ file:///C:/ci/bokeh_1620784067744/work
 boto==2.49.0
